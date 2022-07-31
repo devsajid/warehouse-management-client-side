@@ -1,25 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from "../../firebase.init";
-
 
 function MyItemsHook() {
-    const [user] = useAuthState(auth);
+
     const [Itemes, setItemes] = useState([]);
     useEffect(() => {
-        const email = user.email;
-        const url = `http://localhost:5000/MyItems?email=${email}`
-        fetch(url, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('token')}`
-            }
-        })
+        fetch("https://thawing-harbor-02230.herokuapp.com/MyItems/")
             .then((res) => res.json())
             .then((data) => setItemes(data));
-    }, [user]);
-
+    }, []);
 
     // delete button
     const handleDelete = id => {

@@ -6,7 +6,6 @@ import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 
 
-
 function Headers() {
   const [user] = useAuthState(auth);
   const handleSignOut = () => {
@@ -21,51 +20,34 @@ function Headers() {
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse mt-2" id="navbarNav">
+          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <Link to="/" class="nav-link active" aria-current="page">HOME</Link>
+                <Link to="/" class="nav-link active" aria-current="page">Home</Link>
               </li>
               <li class="nav-item">
-                <Link to="/Inventory" class="nav-link">INVENTORY</Link>
+                <Link to="/Inventory" class="nav-link">Inventory</Link>
               </li>
               <li class="nav-item">
-                <Link to="/myItems" class="nav-link">MY ITEMS</Link>
+                <Link to="/myItems" class="nav-link">My Items</Link>
               </li>
               <li class="nav-item">
-                <Link to="/Blogs" class="nav-link">BLOG</Link>
+                <Link to="/Blogs" class="nav-link">Blog</Link>
               </li>
               <li class="nav-item">
-                <Link to="/About" class="nav-link">ABOUT</Link>
+                <Link to="/About" class="nav-link">About</Link>
               </li>
-
               <li class="nav-item">
-                {
-                  user ?
-                    <p class="nav-link">{user?.displayName}</p>
-                    :
-                    < Link to="/Signin" class="nav-link">SIGNIN</Link>
-                }
+                <Link to="/Register" class="nav-link">Register</Link>
               </li>
-
               <li class="nav-item">
                 {
                   user ?
-                    < Link to="/MyAccount" class="nav-link">MyAccount</Link>
+                    <button onClick={handleSignOut} class="nav-link btn btn-light">Sign Out</button>
                     :
-                    < Link to="/Signin" class="nav-link">SIGNIN</Link>
+                    < Link to="/Signin" class="nav-link">Signin</Link>
                 }
               </li>
-
-              <li class="nav-item">
-                {
-                  user ?
-                    <button onClick={handleSignOut} class="nav-link btn btn-light">SIGNOUT</button>
-                    :
-                    <Link to="/Register" class="nav-link">REGISTER</Link>
-                }
-              </li>
-
             </ul>
           </div>
         </div>

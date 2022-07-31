@@ -1,11 +1,9 @@
 import React from 'react'
 
-
 function Blogs() {
   return (
     <div>
       <h2>Blogs</h2>
-      {/* <PageTitle class="title"></PageTitle> */}
       <div class="row">
         <div class="col">
           <div class="accordion" id="accordionPanelsStayOpenExample">

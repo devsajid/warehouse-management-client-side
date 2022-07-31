@@ -1,13 +1,14 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
-import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Headers from './Components/Headers/Headers';
 import Home from './Components/Home/Home';
 import Register from './Components/Register/Register';
 import Signin from './Components/Signin/Signin';
 import Blogs from './Components/Blogs/Blogs';
 import About from './Components/About/About';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
+import Checkout from './Components/Checkout/Checkout';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import NotFound from './Components/NotFound/NotFound';
 import Footer from './Components/Footer/Footer';
 import Inventory from './Components/Inventory/Inventory';
@@ -16,8 +17,7 @@ import AddMyItem from './Components/MyItems/Add Item/AddMyItem';
 import UpdateMyItem from './Components/MyItems/UpdateItem/UpdateMyItem';
 import AddItem from './Components/Inventory/Add Item/AddItem';
 import UpdateItem from './Components/Inventory/UpdateItem/UpdateItem';
-import MyAccount from './Components/MyAccount/MyAccount';
-// import Checkout from './Components/Checkout/Checkout';
+
 
 
 function App() {
@@ -54,8 +54,6 @@ function App() {
         <Route path="/additem" element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>
 
         <Route path="/addmyitem" element={<RequireAuth><AddMyItem></AddMyItem></RequireAuth>}></Route>
-
-        <Route path="/MyAccount" element={<RequireAuth><MyAccount></MyAccount></RequireAuth>}></Route>
 
         {/* <Route path="/Checkout" element={
           <RequireAuth><Checkout></Checkout></RequireAuth>}></Route> */}
